@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion> <!-- required, not inherited -->
+    <artifactId>multi-threading</artifactId> <!-- required, not inherited -->
+
+    <!-- parent pom details -->
+    <parent>
+        <groupId>java.exploration</groupId>
+        <artifactId>java-exploration</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath> <!-- path of parent pom relative to child module directory -->
+    </parent>
+
+    <dependencies>
+        <!-- install this dependency mentioned in parent pom -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <!-- include junit dependency -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite-engine</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
