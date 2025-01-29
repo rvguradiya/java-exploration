@@ -7,6 +7,13 @@
     <packaging>pom</packaging>  <!-- required, inheritable -->
     <version>1.0.0-SNAPSHOT</version> <!-- required, inheritable -->
 
+    <!-- setting properties and value that, will inherited by all child, use for pom and plugin -->
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <!-- dependencies version management for child module-->
     <!-- not force to include dependency in child, include only specified dependency in child without mention version-->
     <!-- override dependency of different version also in child-->
@@ -18,6 +25,20 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>2.0.16</version>
+            </dependency>
+            <!-- logging provider for slf4j -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.5.16</version>
+            </dependency>
+            <!-- junit dependency, -->
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>  <!-- this it dependencies manage for junit modules -->
+                <version>5.11.4</version>
+                <type>pom</type>    <!-- only can include in dependencyManagement section -->
+                <scope>import</scope>   <!-- maven replace all dependencies junit-bom to this -->
             </dependency>
         </dependencies>
     </dependencyManagement>
